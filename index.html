@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <h1>todos</h1>
+    <h1 id="h1">todos</h1>
     <form id="form">
         <div class="addToDo">
             <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off">
@@ -28,7 +31,7 @@
 
         <div class="completedJobs">
             <h3>Completed jobs</h3>
-            <ol class="completed" id="completed"></ol>
+            <ol class="completedToDos" id="completedToDos"></ol>
 
         </div>
 
@@ -37,8 +40,24 @@
 
     <script src="script.js"></script>
 
+    <script>
+        //The ColorCode() will give the code every time.
+        function ColorCode() {
+            var makingColorCode = '0123456789ABCDEF';
+            var finalCode = '#';
+            for (var counter = 0; counter < 6; counter++) {
+                finalCode = finalCode + makingColorCode[Math.floor(Math.random() * 16)];
+            }
+            return finalCode;
+        }
+        //Function calling on button click.
+        function getRandomColor() {
+            $("#bodyId").css("background-color", ColorCode());
+        }
+    </script>
 
-    <script src="script.js"></script>
+
+
 </body>
 
 </html
