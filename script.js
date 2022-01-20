@@ -5,6 +5,7 @@ var completed = document.getElementById('completed');
 var btn = document.getElementById('add');
 const todos = JSON.parse(localStorage.getItem('todos'));
 
+
 if (todos) {
     todos.forEach(todo => addTodo(todo));
 }
@@ -24,37 +25,36 @@ function addTodo(todo) {
 
     if (todoText) {
         const todoEl = document.createElement('li');
-       
+      
         todoEl.innerText = todoText;
 
         todoEl.addEventListener('click', () => {
-            
            
-            completed.appendChild(todoEl)
+
+            completed.appendChild(todoEl);
             todoEl.classList.add('completed');
-            
+
             updateLS();
         });
 
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault();
-
             todoEl.remove();
             updateLS();
         });
 
         todosUL.appendChild(todoEl);
-
+      
         input.value = '';
-
-        updateLS();
+         updateLS();
     }
 }
 
 function updateLS() {
-    todosEl = document.querySelectorAll('li');
+    var todosEl = document.querySelectorAll('li');
 
     const todos = [];
+   
 
     todosEl.forEach(todoEl => {
         todos.push({
@@ -64,4 +64,6 @@ function updateLS() {
     });
 
     localStorage.setItem('todos', JSON.stringify(todos));
+
+   
 }
