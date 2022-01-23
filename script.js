@@ -4,6 +4,7 @@ const todosUL = document.getElementById('todos');
 var completedToDo = document.getElementById('completedToDos');
 var btn = document.getElementById('add');
 const todos = JSON.parse(localStorage.getItem('todos'));
+const color = JSON.parse(localStorage.getItem('color'));
 
 
 
@@ -51,22 +52,7 @@ function addTodo(todo) {
         updateLS();
     }
 }
-//localStorage
-function updateLS() {
-    var todosEl = document.querySelectorAll('li');
-
-    const todos = [];
-
-    todosEl.forEach(todoEl => {
-        todos.push({
-            text: todoEl.innerText,
-            completed: todoEl.classList.contains('completed')
-        });
-    });
-
-    localStorage.setItem('todos', JSON.stringify(todos));
-}
-
+//color change heading
 var h1 = document.getElementById('h1');
 h1.addEventListener('click', () => {
     h1.style.color = ColorCode();
@@ -80,4 +66,37 @@ function ColorCode() {
     }
     return finalCode;
 }
+
+
+//localStorage
+function updateLS() {
+    var todosEl = document.querySelectorAll('li');
+    console.log(todosEl);
+
+    const todos = [];
+
+    todosEl.forEach(todoEl => {
+        todos.push({
+            text: todoEl.innerText,
+            completed: todoEl.classList.contains('completed')
+        });
+    });
+
+    localStorage.setItem('todos', JSON.stringify(todos));
+
+
+    var colorChange = document.querySelectorAll('h1');
+    console.log(colorChange);
+    localStorage.setItem('color', JSON.stringify(colorChange));
+
+
+
+}
+
+
+
+
+
+
+
 
