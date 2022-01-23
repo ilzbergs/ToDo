@@ -26,15 +26,15 @@ function addTodo(todo) {
 
     if (todoText) {
         const todoEl = document.createElement('li');
-        if(todo && todo.completed) {
-            todoEl.classList.add('completed')
-        }
+        // if (todo && todo.completed) {
+        //     todoEl.classList.add('completed');
+        // }
         todoEl.innerText = todoText;
 
         //add to completed   completedToDo.appendChild(todoEl)To Dos
         todoEl.addEventListener('click', () => {
-          
-    
+
+            completedToDo.appendChild(todoEl);
             todoEl.classList.add('completed');
             updateLS();
         });
@@ -67,20 +67,17 @@ function updateLS() {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
+var h1 = document.getElementById('h1');
+h1.addEventListener('click', () => {
+    h1.style.color = ColorCode();
+});
+
 function ColorCode() {
     var makingColorCode = '0123456789ABCDEF';
     var finalCode = '#';
     for (var counter = 0; counter < 6; counter++) {
-       finalCode =finalCode+ makingColorCode[Math.floor(Math.random() * 16)];
+        finalCode = finalCode + makingColorCode[Math.floor(Math.random() * 16)];
     }
     return finalCode;
- }
+}
 
-//  function getRandomColor() {
-//     $("#bodyId").css("color", "red");
-//  }
-
- var h1 = document.getElementById('h1');
- h1.addEventListener('click', ()=> {
-     h1.style.color = ColorCode();
- })

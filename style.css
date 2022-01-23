@@ -9,22 +9,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
   margin: 0;
- overflow: visible;
+}
+
+.container {
+  margin: 15px;
 }
 h1 {
   color: #b383e2;
-  font-size: 10rem;
+  font-size: 9rem;
   text-align: center;
   opacity: 0.4;
   cursor: pointer;
+  margin-bottom: 2rem;
+  user-select: none;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 form {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 100%;
-  width: 400px;
+  margin-bottom: 50px;
 }
 
 .input {
@@ -49,48 +54,56 @@ form {
   flex-direction: row;
 }
 button {
-  background-color:#b383e2;
+  background-color: #b383e2;
   opacity: 0.4;
   width: 50px;
 }
 
-.todos, .completedToDos{
+.todos,
+.completedToDos {
   background-color: #fff;
   padding: 0;
   margin: 0;
   list-style-type: none;
- 
 }
 .notcompleted ol {
   height: auto;
   max-height: 500px;
-  overflow-y: scroll;
 }
-.todos li, .completedToDos li {
+.todos li,
+.completedToDos li {
   border-top: 1px solid #e5e5e5;
   cursor: pointer;
   font-size: 1.5rem;
   padding: 1rem 2rem;
- 
 }
 
 .todos li.completed {
   color: #b6b6b6;
   text-decoration: line-through;
-  
 }
 .completedJobs ol {
-  height: 400px;
-  overflow-y: scroll;
-}
-
-.completedToDos li.completed{
-  color: #b6b6b6;
-  text-decoration: line-through;
  
 }
+.completedJobs{
+  padding-bottom: 1px;
+}
+.completedToDos li.completed {
+  color: #b6b6b6;
+  text-decoration: line-through;
+}
+
+h3{
+ margin-left: 15px;
+}
 small {
-  color: #b5b5b5;
-  margin-top: 3rem;
+ 
+  display: block;
+  background-color:#f5f5f5 ;
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
 }
