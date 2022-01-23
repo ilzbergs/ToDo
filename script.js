@@ -57,7 +57,6 @@ var h1 = document.getElementById('h1');
 h1.addEventListener('click', () => {
     h1.style.color = ColorCode();
 });
-
 function ColorCode() {
     var makingColorCode = '0123456789ABCDEF';
     var finalCode = '#';
@@ -86,7 +85,6 @@ function updateLS() {
 
 
     var colorChange = document.querySelectorAll('h1');
-    console.log(colorChange);
     localStorage.setItem('color', JSON.stringify(colorChange));
 
 
