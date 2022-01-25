@@ -2,9 +2,10 @@ const form = document.getElementById('form');
 const input = document.getElementById('input');
 const todosUL = document.getElementById('todos');
 var completedToDo = document.getElementById('completedToDos');
-var btn = document.getElementById('add');
+var btn = document.querySelector('button');
+var inputOutlineColor=document.querySelector('input');
 const todos = JSON.parse(localStorage.getItem('todos'));
-const color = JSON.parse(localStorage.getItem('color'));
+const color = JSON.parse(localStorage.getItem('x'));
 
 
 
@@ -14,9 +15,10 @@ if (todos) {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     addTodo();
 });
+
+
 //add To Dos
 function addTodo(todo) {
     let todoText = input.value;
@@ -27,18 +29,17 @@ function addTodo(todo) {
 
     if (todoText) {
         const todoEl = document.createElement('li');
-        // if (todo && todo.completed) {
-        //     todoEl.classList.add('completed');
-        // }
+        if (todo && todo.completed) {
+            todoEl.classList.add('completed');
+        }
         todoEl.innerText = todoText;
 
-        //add to completed   completedToDo.appendChild(todoEl)To Dos
-        todoEl.addEventListener('click', () => {
-
-            completedToDo.appendChild(todoEl);
-            todoEl.classList.add('completed');
-            updateLS();
-        });
+        //add to completed 
+            todoEl.addEventListener('click', () => {
+                // completedToDo.appendChild(todoEl);
+                todoEl.classList.add('completed');
+                updateLS();
+            });
 
         //delete to dos
         todoEl.addEventListener('contextmenu', (e) => {
@@ -46,7 +47,6 @@ function addTodo(todo) {
             todoEl.remove();
             updateLS();
         });
-
         todosUL.appendChild(todoEl);
         input.value = '';
         updateLS();
@@ -56,6 +56,8 @@ function addTodo(todo) {
 var h1 = document.getElementById('h1');
 h1.addEventListener('click', () => {
     h1.style.color = ColorCode();
+    btn.style.backgroundColor= h1.style.color;
+    inputOutlineColor.style.outlineColor = h1.style.color;
 });
 function ColorCode() {
     var makingColorCode = '0123456789ABCDEF';
@@ -69,8 +71,8 @@ function ColorCode() {
 
 //localStorage
 function updateLS() {
-    var todosEl = document.querySelectorAll('li');
-    console.log(todosEl);
+    todosEl = document.querySelectorAll('li');
+
 
     const todos = [];
 
@@ -82,17 +84,7 @@ function updateLS() {
     });
 
     localStorage.setItem('todos', JSON.stringify(todos));
-
-
-    var colorChange = document.querySelectorAll('h1');
-    localStorage.setItem('color', JSON.stringify(colorChange));
-
-
-
 }
-
-
-
 
 
 
