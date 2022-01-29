@@ -36,7 +36,6 @@ function addTodo(todo) {
         //add to completed 
         todoEl.addEventListener('click', () => {
             // completedToDo.appendChild(todoEl);
-
             window.setTimeout(function (e) {
                 todoEl.classList.add('completed');
                 updateLS();
