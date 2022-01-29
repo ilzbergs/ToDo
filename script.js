@@ -22,7 +22,6 @@ form.addEventListener('submit', (e) => {
 //add To Dos
 function addTodo(todo) {
     let todoText = input.value;
-
     if (todo) {
         todoText = todo.text;
     }
@@ -76,10 +75,10 @@ function updateLS() {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-// Some random colors
-const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
+// random colors for balls
+const colors = [];
 
-const numBalls = 50;
+const numBalls = 100;
 const balls = [];
 
 for (let i = 0; i < numBalls; i++) {
@@ -95,7 +94,7 @@ for (let i = 0; i < numBalls; i++) {
     balls.push(ball);
     document.body.append(ball);
 }
-;
+
 balls.forEach((el, i, ra) => {
     let to = {
         x: Math.random() * (i % 2 === 0 ? -11 : 11),

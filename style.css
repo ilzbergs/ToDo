@@ -34,7 +34,7 @@ h1 {
 
 form {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 100%;
+  max-width: 500px;
   margin-bottom: 50px;
   background-color: #f3f3f3;
   position: relative;
@@ -92,11 +92,13 @@ button {
 .todos li.completed {
   color: #b6b6b6;
   background-color: #faf6f5;
+  display: flex;
+    justify-content: space-between;
 }
 
-.todos li.completed::before {
-  content: '\2713';
-  padding-right: 10px;
+.todos li.completed::after {
+  content: 'Completed';
+ color: red;
 }
 
 .completedJobs {
@@ -105,28 +107,67 @@ button {
 
 .completedToDos li.completed {
   color: #b6b6b6;
+  display: flex;
+  justify-content: space-between;
 }
 
 h3 {
   margin-left: 15px;
 }
 
-small {
+.mobile {
   display: block;
   text-align: center;
   position: fixed;
   bottom: 0;
   height: 50px;
+  z-index: 1;
+  background-color: #f3f3f3;
+  width: 100%;
+  opacity: 0.9;
+}
+@media screen and (min-width: 1024px) {
+  small.mobile {
+    display: none;
+  }
+}
+.desktop {
+  display: none;
+}
+@media screen and (min-width: 1024px){
+  .desktop{
+    display: block;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    text-align: center;
+    z-index: 1;
+    background-color: #f3f3f3;
+    width: 100%;
+    opacity: 0.9;
+  }
 }
 
 .ball {
   position: fixed;
   border-radius: 100%;
   opacity: 0.7;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  animation: gradient 15s ease infinite;
+  background: linear-gradient(-45deg,#f1ecea, #e73c7e, #6ed0f3, #011611);
+  animation: gradient 5s  ease-in-out infinite;
+  background-size: 400% 400%;
 }
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 .deleting {
   transform: scale(1, 0);
   transition: all 500ms ease;
