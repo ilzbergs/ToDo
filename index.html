@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Toms Ilzbergs">
+    <meta name="keywords" content="To Do, to do list, to dos, TODO">
+    <meta name="description" content="Simple To Do list web application">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.jpg">
     <title>To Do List</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body>
     <div class="container">
-        <h1 id="h1">Todos</h1>
+        <h1 id="h1">To Dos</h1>
         <form id="form">
             <div class="addToDo">
                 <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off">
@@ -26,17 +28,17 @@
             </div>
 
             <div class="notCompleted">
-                <h3>This is waiting for you</h3>
+                <h3>This is waiting for you <i class="far fa-hand-point-down"></i></h3>
                 <ol class="todos" id="todos"></ol>
             </div>
 
-            <div class="completedJobs">
+            <!-- <div class="completedJobs">
                 <h3>Completed jobs</h3>
                 <ol class="completedToDos" id="completedToDos"></ol>
-            </div>
+            </div> -->
         </form>
     </div>
-     <small>Left click to toggle completed. <br> Right click to delete todo</small>
+    <small>Left click to toggle completed. <br> Right click to delete todo</small>
 
 
     <script src="script.js"></script>
