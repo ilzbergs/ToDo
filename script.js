@@ -37,19 +37,20 @@ function addTodo(todo) {
         //add to completed 
         todoEl.addEventListener('click', () => {
             // completedToDo.appendChild(todoEl);
-            todoEl.classList.add('completed');      
+            todoEl.classList.add('completed');
+            updateLS();
         });
 
         //delete to dos
         todoEl.addEventListener('contextmenu', (e) => {
             e.preventDefault();
             todoEl.classList.add('deleting');
-            window.setTimeout(function(e) {
+            window.setTimeout(function (e) {
                 todoEl.remove();
-                 updateLS();
-              }, 500);
-    
-           
+                updateLS();
+            }, 500);
+
+
         });
         todosUL.appendChild(todoEl);
         input.value = '';
@@ -99,13 +100,13 @@ balls.forEach((el, i, ra) => {
     let to = {
         x: Math.random() * (i % 2 === 0 ? -11 : 11),
 
-        y:Math.random()*5
+        y: Math.random() * 5
     };
 
     let anim = el.animate(
         [
             { transform: "translate(0, 0)" },
-            { transform: `translate(${to.x}rem, ${to.y}rem`}
+            { transform: `translate(${to.x}rem, ${to.y}rem` }
         ],
         {
             duration: (Math.random() + 1) * 2000,
@@ -123,7 +124,7 @@ h1.addEventListener('click', () => {
     h1.style.color = ColorCode();
     btn.style.backgroundColor = h1.style.color;
     inputOutlineColor.style.outlineColor = h1.style.color;
-   
+
 });
 function ColorCode() {
     var makingColorCode = '0123456789ABCDEF';
