@@ -6,6 +6,7 @@
 }
 
 body {
+  touch-action: auto;
   color: #444;
   font-family: 'Schoolbell', sans-serif, Arial;
   display: -webkit-box;

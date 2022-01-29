@@ -5,7 +5,7 @@ var completedToDo = document.getElementById('completedToDos');
 var btn = document.querySelector('button');
 var inputOutlineColor = document.querySelector('input');
 const todos = JSON.parse(localStorage.getItem('todos'));
-const color = JSON.parse(localStorage.getItem('x'));
+
 
 
 
