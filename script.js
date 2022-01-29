@@ -36,8 +36,12 @@ function addTodo(todo) {
         //add to completed 
         todoEl.addEventListener('click', () => {
             // completedToDo.appendChild(todoEl);
-            todoEl.classList.add('completed');
-            updateLS();
+
+            window.setTimeout(function (e) {
+                todoEl.classList.add('completed');
+                updateLS();
+            }, 500);
+
         });
 
         //delete to dos
@@ -61,7 +65,6 @@ function addTodo(todo) {
 //localStorage
 function updateLS() {
     todosEl = document.querySelectorAll('li');
-
 
     const todos = [];
 
@@ -119,6 +122,7 @@ balls.forEach((el, i, ra) => {
 
 //color change heading, button and input focus
 var h1 = document.getElementById('h1');
+
 h1.addEventListener('click', () => {
     h1.style.color = ColorCode();
     btn.style.backgroundColor = h1.style.color;
@@ -128,6 +132,7 @@ h1.addEventListener('click', () => {
 function ColorCode() {
     var makingColorCode = '0123456789ABCDEF';
     var finalCode = '#';
+
     for (var counter = 0; counter < 6; counter++) {
         finalCode = finalCode + makingColorCode[Math.floor(Math.random() * 16)];
     }

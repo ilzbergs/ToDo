@@ -93,12 +93,13 @@ button {
   color: #b6b6b6;
   background-color: #faf6f5;
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
+  transition: all 100ms ease;
 }
 
 .todos li.completed::after {
   content: 'Completed';
- color: red;
+  color: red;
 }
 
 .completedJobs {
@@ -134,8 +135,8 @@ h3 {
 .desktop {
   display: none;
 }
-@media screen and (min-width: 1024px){
-  .desktop{
+@media screen and (min-width: 1024px) {
+  .desktop {
     display: block;
     position: fixed;
     bottom: 0;
@@ -151,25 +152,25 @@ h3 {
 .ball {
   position: fixed;
   border-radius: 100%;
-  opacity: 0.7;
-  background: linear-gradient(-45deg,#f1ecea, #e73c7e, #6ed0f3, #011611);
-  animation: gradient 5s  ease-in-out infinite;
+  background: linear-gradient(-90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+  animation: gradient 8s ease-in-out infinite;
   background-size: 400% 400%;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+
 }
 .deleting {
-  transform: scale(1, 0);
+  transform: scale(1,0);
   transition: all 500ms ease;
   background-color: #f3f3f3;
 }
