@@ -93,7 +93,10 @@ form {
 .input:focus {
   outline-color: rgb(179, 131, 226);
 }
-
+input {
+   font-family:inherit; 
+  }
+  
 .addToDo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -146,7 +149,22 @@ button {
 .todos li.completed::after {
   content: 'Completed';
   color: red;
+  animation-name: example;
+  animation-duration: 1s;
 }
+@keyframes example {
+
+  from {
+     opacity: 1;
+     transform: translateX(-200px);
+   }
+ 
+   to {
+     opacity: 1;
+     transform: translateX(0);
+   }
+ 
+ }
 
 .completedJobs {
   padding-bottom: 1px;
@@ -267,7 +285,7 @@ li {
 @keyframes li-animation {
   from {
     opacity: 0;
-    transform: translateY(-400px);
+    transform: translateY(-500px);
   }
 
   to {
