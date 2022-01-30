@@ -259,9 +259,7 @@ h3 {
 }
 
 .deleting {
-  animation: deleting-animation 400ms cubic-bezier(0.55, -0.04, 0.91, 0.94)
-    forwards;
-
+  animation: deleting-animation 0.5s;
   transform-origin: 0% 100%;
 }
 
@@ -273,19 +271,15 @@ h3 {
 
   100% {
     opacity: 0;
-    transform: translateY(200px) rotateZ(90deg);
+    transform: translateY(8rem) rotateZ(20deg);
   }
 }
 
-li {
-  opacity: 0;
-  animation: li-animation 0.3s linear forwards;
-}
 
 @keyframes li-animation {
   from {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateY(-500%);
   }
 
   to {

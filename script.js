@@ -53,7 +53,7 @@ function addTodo(todo) {
             window.setTimeout(function (e) {
                 todoEl.remove();
                 updateLS();
-            }, 300);
+            }, 250);
 
 
         });
