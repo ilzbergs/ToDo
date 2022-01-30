@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 10 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 * {
   -webkit-box-sizing: border-box;
@@ -5,7 +12,8 @@
 }
 
 body {
-  touch-action: auto;
+  -ms-touch-action: auto;
+      touch-action: auto;
   color: #444;
   font-family: 'Schoolbell', sans-serif, Arial;
   display: -webkit-box;
@@ -149,19 +157,38 @@ button {
 .todos li.completed::after {
   content: 'Completed';
   color: red;
-  animation-name: example;
-  animation-duration: 1s;
+  -webkit-animation-name: example;
+          animation-name: example;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
-@keyframes example {
+@-webkit-keyframes example {
 
   from {
      opacity: 1;
-     transform: translateX(-200px);
+     -webkit-transform: translateX(-200px);
+             transform: translateX(-200px);
    }
  
    to {
      opacity: 1;
-     transform: translateX(0);
+     -webkit-transform: translateX(0);
+             transform: translateX(0);
+   }
+ 
+ }
+@keyframes example {
+
+  from {
+     opacity: 1;
+     -webkit-transform: translateX(-200px);
+             transform: translateX(-200px);
+   }
+ 
+   to {
+     opacity: 1;
+     -webkit-transform: translateX(0);
+             transform: translateX(0);
    }
  
  }
@@ -220,14 +247,8 @@ h3 {
 .ball {
   position: fixed;
   border-radius: 100%;
-  background: -webkit-gradient(
-    linear,
-    right top,
-    left top,
-    from(rgba(255, 0, 0, 0)),
-    to(rgba(255, 0, 0, 1))
-  );
   background: -o-linear-gradient(right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
+  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 0, 0, 0)), to(rgba(255, 0, 0, 1)));
   background: linear-gradient(-90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
   -webkit-animation: gradient 8s ease-in-out infinite;
   animation: gradient 8s ease-in-out infinite;
@@ -259,19 +280,53 @@ h3 {
 }
 
 .deleting {
-  animation: deleting-animation 0.5s;
-  transform-origin: 0% 100%;
+  -webkit-animation: deleting-animation 0.5s;
+          animation: deleting-animation 0.5s;
+  -webkit-transform-origin: 0% 100%;
+      -ms-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+@-webkit-keyframes deleting-animation {
+  0% {
+    opacity: 1;
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(8rem) rotateZ(20deg);
+            transform: translateY(8rem) rotateZ(20deg);
+  }
 }
 
 @keyframes deleting-animation {
   0% {
     opacity: 1;
-    transform: rotateZ(0);
+    -webkit-transform: rotateZ(0);
+            transform: rotateZ(0);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(8rem) rotateZ(20deg);
+    -webkit-transform: translateY(8rem) rotateZ(20deg);
+            transform: translateY(8rem) rotateZ(20deg);
+  }
+}
+
+
+@-webkit-keyframes li-animation {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-500%);
+            transform: translateY(-500%);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 
@@ -279,11 +334,13 @@ h3 {
 @keyframes li-animation {
   from {
     opacity: 0;
-    transform: translateY(-500%);
+    -webkit-transform: translateY(-500%);
+            transform: translateY(-500%);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
