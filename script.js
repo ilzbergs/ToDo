@@ -8,7 +8,6 @@ const todos = JSON.parse(localStorage.getItem('todos'));
 
 
 
-
 if (todos) {
     todos.forEach(todo => addTodo(todo));
 }
@@ -16,6 +15,7 @@ if (todos) {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     addTodo();
+    
 });
 
 
@@ -26,20 +26,22 @@ function addTodo(todo) {
         todoText = todo.text;
     }
 
+   
     if (todoText) {
         const todoEl = document.createElement('li');
         if (todo && todo.completed) {
             todoEl.classList.add('completed');
         }
         todoEl.innerText = todoText;
-
+      
+        console.log(todoEl.value)
         //add to completed 
         todoEl.addEventListener('click', () => {
             // completedToDo.appendChild(todoEl);
             window.setTimeout(function (e) {
                 todoEl.classList.add('completed');
                 updateLS();
-            }, 500);
+            }, 300);
 
         });
 
@@ -50,7 +52,7 @@ function addTodo(todo) {
             window.setTimeout(function (e) {
                 todoEl.remove();
                 updateLS();
-            }, 500);
+            }, 300);
 
 
         });
@@ -97,11 +99,11 @@ for (let i = 0; i < numBalls; i++) {
     document.body.append(ball);
 }
 
-balls.forEach((el, i, ra) => {
+balls.forEach((el, i,) => {
     let to = {
-        x: Math.random() * (i % 2 === 0 ? -11 : 11),
+        x: Math.random() * (i % 2 === 0 ? -22 : 22),
 
-        y: Math.random() * 5
+        y: Math.random() * 11
     };
 
     let anim = el.animate(
