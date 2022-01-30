@@ -96,7 +96,7 @@ form {
 input {
    font-family:inherit; 
   }
-  
+
 .addToDo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -285,7 +285,7 @@ li {
 @keyframes li-animation {
   from {
     opacity: 0;
-    transform: translateY(-500px);
+    transform: translateY(-100%);
   }
 
   to {
