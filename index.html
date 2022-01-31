@@ -10,6 +10,7 @@
     <meta name="description" content="Simple To Do list web application">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.jpg">
     <title>To Do List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -22,6 +23,17 @@
 <body>
     <div class="container">
         <h1 id="h1">To Dos</h1>
+        <div id="header">
+            <div id="click">
+                <i class="fas fa-arrow-up"></i>
+                <i class="fas fa-arrow-up"></i>
+                <i class="fas fa-arrow-up"></i>
+            </div>
+            <div class="alert">
+                <p>Hit on me for some color changes!</p>
+            </div>
+        </div>
+
         <form id="form">
             <div class="addToDo">
                 <input type="text" class="input" id="input" placeholder="Enter your todo" autocomplete="off">
@@ -43,7 +55,14 @@
     <small class="mobile">Tap to toogle completed. <br>Hold to delete todo</small>
     <small class="desktop">Left click to toggle completed. <br> Right click to delete todo</small>
 
-
+    <script type="text/javascript">
+        $("#h1").on("mouseover", function (event) {
+            $("#header").show();
+        });
+        $("#h1").on("mouseout", function (event) {
+            $("#header").hide();
+        });
+    </script>
     <script src="script.js"></script>
 
 

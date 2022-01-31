@@ -83,7 +83,7 @@ function updateLS() {
 // random colors for balls
 const colors = [];
 
-const numBalls = 100;
+const numBalls = 200;
 const balls = [];
 
 for (let i = 0; i < numBalls; i++) {
@@ -93,7 +93,7 @@ for (let i = 0; i < numBalls; i++) {
     ball.style.left = `${Math.floor(Math.random() * 100)}vw`;
     ball.style.top = `${Math.floor(Math.random() * 100)}vh`;
     ball.style.transform = `scale(${Math.random()})`;
-    ball.style.width = `${Math.random()}em`;
+    ball.style.width = `${Math.random()*0.7}em`;
     ball.style.height = ball.style.width;
 
     balls.push(ball);

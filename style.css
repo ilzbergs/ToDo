@@ -13,7 +13,7 @@
 
 body {
   -ms-touch-action: auto;
-      touch-action: auto;
+  touch-action: auto;
   color: #444;
   font-family: 'Schoolbell', sans-serif, Arial;
   display: -webkit-box;
@@ -38,14 +38,17 @@ body {
 .container {
   margin: 15px;
 }
+#header {
+  margin-top: -70px;
+}
 h1 {
   color: #b383e2;
   font-size: 8rem;
   text-align: center;
-  margin-top: 1px;
+  margin-top: 25px;
   opacity: 0.6;
   cursor: pointer;
-  margin-bottom: 2rem;
+  margin-bottom: 55px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -53,7 +56,19 @@ h1 {
   font-family: 'Schoolbell', cursive;
   text-shadow: -5px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+.fas {
+  text-align: center;
+}
 
+#click {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.alert {
+  text-align: center;
+}
 form {
   -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -102,8 +117,8 @@ form {
   outline-color: rgb(179, 131, 226);
 }
 input {
-   font-family:inherit; 
-  }
+  font-family: inherit;
+}
 
 .addToDo {
   display: -webkit-box;
@@ -134,20 +149,20 @@ button {
 li {
   opacity: 0;
   -webkit-animation: li-animation 0.3s linear forwards;
-          animation: li-animation 0.3s linear forwards;
+  animation: li-animation 0.3s linear forwards;
 }
 
 @-webkit-keyframes li-animation {
   from {
     opacity: 0;
     -webkit-transform: translateY(-500%);
-            transform: translateY(-500%);
+    transform: translateY(-500%);
   }
 
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -155,13 +170,13 @@ li {
   from {
     opacity: 0;
     -webkit-transform: translateY(-500%);
-            transform: translateY(-500%);
+    transform: translateY(-500%);
   }
 
   to {
     opacity: 1;
     -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -186,45 +201,46 @@ li {
   -o-transition: all ease;
   transition: all ease;
 }
-
+#alert {
+  display: none;
+  align-items: center;
+  text-align: center;
+  margin-top: 0;
+}
 .todos li.completed::after {
   content: 'Completed';
   color: red;
   -webkit-animation-name: example;
-          animation-name: example;
+  animation-name: example;
   -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-duration: 1s;
 }
 @-webkit-keyframes example {
-
   from {
-     opacity: 1;
-     -webkit-transform: translateX(-200px);
-             transform: translateX(-200px);
-   }
- 
-   to {
-     opacity: 1;
-     -webkit-transform: translateX(0);
-             transform: translateX(0);
-   }
- 
- }
+    opacity: 1;
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
 @keyframes example {
-
   from {
-     opacity: 1;
-     -webkit-transform: translateX(-200px);
-             transform: translateX(-200px);
-   }
- 
-   to {
-     opacity: 1;
-     -webkit-transform: translateX(0);
-             transform: translateX(0);
-   }
- 
- }
+    opacity: 1;
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
 
 .completedJobs {
   padding-bottom: 1px;
@@ -279,9 +295,16 @@ h3 {
 
 .ball {
   position: fixed;
+  opacity: .5;
   border-radius: 100%;
   background: -o-linear-gradient(right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
-  background: -webkit-gradient(linear, right top, left top, from(rgba(255, 0, 0, 0)), to(rgba(255, 0, 0, 1)));
+  background: -webkit-gradient(
+    linear,
+    right top,
+    left top,
+    from(rgba(255, 0, 0, 0)),
+    to(rgba(255, 0, 0, 1))
+  );
   background: linear-gradient(-90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
   -webkit-animation: gradient 8s ease-in-out infinite;
   animation: gradient 8s ease-in-out infinite;
@@ -313,29 +336,29 @@ h3 {
 }
 
 .deleting {
-  -webkit-animation: deleting-animation 500ms cubic-bezier(0.55, -0.04, 0.91, 0.94)
-    forwards;
-          animation: deleting-animation 500ms cubic-bezier(0.55, -0.04, 0.91, 0.94)
+  -webkit-animation: deleting-animation 500ms
+    cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+  animation: deleting-animation 500ms cubic-bezier(0.55, -0.04, 0.91, 0.94)
     forwards;
 
   -webkit-transform-origin: 0% 100%;
 
-      -ms-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
 
-          transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
 }
 
 @-webkit-keyframes deleting-animation {
   0% {
     opacity: 1;
     -webkit-transform: rotateZ(0);
-            transform: rotateZ(0);
+    transform: rotateZ(0);
   }
 
   100% {
     opacity: 0;
     -webkit-transform: translateY(400px) rotateZ(90deg);
-            transform: translateY(400px) rotateZ(90deg);
+    transform: translateY(400px) rotateZ(90deg);
   }
 }
 
@@ -343,13 +366,12 @@ h3 {
   0% {
     opacity: 1;
     -webkit-transform: rotateZ(0);
-            transform: rotateZ(0);
+    transform: rotateZ(0);
   }
 
   100% {
     opacity: 0;
     -webkit-transform: translateY(400px) rotateZ(90deg);
-            transform: translateY(400px) rotateZ(90deg);
+    transform: translateY(400px) rotateZ(90deg);
   }
 }
-
