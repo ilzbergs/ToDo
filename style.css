@@ -295,7 +295,7 @@ h3 {
 
 .ball {
   position: fixed;
-  opacity: .5;
+  opacity: 0.2;
   border-radius: 100%;
   background: -o-linear-gradient(right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
   background: -webkit-gradient(
